@@ -1,0 +1,20 @@
+import { Router } from "express"
+import { handle_response } from "../utils";
+import { {*}Handle } from "../usecases/{*}.usecases";
+import { create{*}Payload } from "../entities/{*}.entities";
+
+const {*}Routes = Router();
+
+{*}Routes.post("/{*}/create", async (req, res) => {
+  return await handle_response(res, () => 
+    {*}Handle.create{*}(create{*}Payload.parse(req.body))
+  )
+});
+
+{*}Routes.get("/{*}/list", async (req, res) => {
+  return await handle_response(res, () => 
+    {*}Handle.list{*}()
+  )
+})
+
+export { {*}Routes };

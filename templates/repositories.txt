@@ -1,0 +1,22 @@
+import { {*} } from "@prisma/client";
+import { Create{*}PayloadType } from "../entities/{*}.entities";
+
+export interface {*}RepositorieInterface {
+  find{*}ById: (id: string) => Promise<{*} | null>,
+  create{*}: (payload: Create{*}PayloadType) => Promise<boolean>,
+  list{*}: () => Promise<{*}[]>
+}
+
+export class {*}RepositorieImplementation implements {*}RepositorieInterface {
+  async list{*}(): Promise<{*}[]> {
+    return [] as {*}[];
+  }
+
+  async find{*}ById(id: string): Promise<{*} | null> {
+    return {} as {*};
+  }
+
+  async create{*}(payload: Create{*}PayloadType): Promise<boolean> {
+    return true;
+  }
+}

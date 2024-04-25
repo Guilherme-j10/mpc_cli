@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/yargs": "^17.0.32",
+    "typescript": "^5.4.5"
+  },
+  "name": "mpc",
+  "scripts": {
+    "update": "yarn tsc && npm install -g .",
+    "test": "yarn update && mpc s"
+  },
+  "bin": {
+    "mpc": "./bin/index.js"
+  },
+  "version": "0.0.3",
+  "main": "bin/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "yargs": "^17.7.2"
+  }
+}

@@ -1,0 +1,23 @@
+//this block code was put here by "mpc"
+import { Response } from "express";
+
+export const handle_response = async (res: Response, callback: () => Promise<any>): Promise<Response> => {
+  if (typeof callback !== 'function')
+    return res.json({ error: true, message: 'handle_response' });
+
+  try {
+    const output = await callback();
+    return res.json(output);
+  } catch (error: any) {
+    if (error?.name === 'ZodError')
+      return res.json({
+        error: true,
+        message: error?.issues
+      })
+
+    return res.json({
+      error: true,
+      message: error?.message || 'Unhandled error.'
+    })
+  }
+}

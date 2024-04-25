@@ -1,0 +1,5 @@
+import z from 'zod';
+
+export const create{*}Payload = z.object({});
+
+export type Create{*}PayloadType = z.output<typeof create{*}Payload>;

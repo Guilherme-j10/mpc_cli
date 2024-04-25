@@ -1,0 +1,25 @@
+import { {*} } from "@prisma/client";
+import { Create{*}PayloadType } from "../entities/{*}.entities";
+import {
+  {*}RepositorieImplementation,
+  {*}RepositorieInterface
+} from "../repositories/{*}.repositories";
+
+class {*}UseCases {
+  constructor(
+    private implementation: {*}RepositorieInterface
+  ) { }
+
+  async create{*}(payload: Create{*}PayloadType): Promise<boolean> {
+    return true;
+  }
+
+  async list{*}(): Promise<{*}[]> {
+    return [] as {*}[];
+  }
+}
+
+const implementation = new {*}RepositorieImplementation();
+const {*}Handle = new {*}UseCases(implementation);
+
+export { {*}Handle };
